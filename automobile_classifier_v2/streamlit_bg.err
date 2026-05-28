@@ -1,0 +1,130 @@
+2026-05-28 15:58:38.217 No ASGI app assignments found in C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\app.py
+2026-05-28 15:58:38.380 Filtered 127 packages down to 2 candidates for component scanning
+2026-05-28 15:58:38.381 Scanning 2 candidate packages for component manifests using 2 worker threads
+2026-05-28 15:58:38.431 Found 0 component manifests total
+2026-05-28 15:58:38.432 No asset roots to watch
+2026-05-28 15:58:38.433 File watching not started
+2026-05-28 15:58:38.433 Starting new event loop for server
+2026-05-28 15:58:38.434 Starting server...
+2026-05-28 15:58:38.460 Starting uvicorn server on 0.0.0.0:8501
+2026-05-28 15:58:38.484 Runtime state: RuntimeState.INITIAL -> RuntimeState.NO_SESSIONS_CONNECTED
+2026-05-28 15:58:38.485 Uvicorn server started on 0.0.0.0:8501
+2026-05-28 15:58:38.505 Setting up signal handler
+2026-05-28 15:58:39.432 No singleton. Registering one.
+2026-05-28 15:58:39.434 Watcher created for C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\app.py
+2026-05-28 15:58:39.435 AppSession initialized (id=bc15bc0e-6d7f-4a72-8046-65acf76cbacb)
+2026-05-28 15:58:39.435 Created new session for client 2607061845920. Session ID: bc15bc0e-6d7f-4a72-8046-65acf76cbacb
+2026-05-28 15:58:39.435 Runtime state: RuntimeState.NO_SESSIONS_CONNECTED -> RuntimeState.ONE_OR_MORE_SESSIONS_CONNECTED
+2026-05-28 15:58:39.445 Beginning script thread
+2026-05-28 15:58:39.445 Running script
+2026-05-28 15:58:39.445 Disconnecting files for session with ID bc15bc0e-6d7f-4a72-8046-65acf76cbacb
+2026-05-28 15:58:39.445 Sessions still active: dict_keys([])
+2026-05-28 15:58:39.445 Files: 0; Sessions with files: 0
+2026-05-28 15:58:44.391 Removing orphaned files...
+2026-05-28 15:58:44.392 Removing orphaned deferred callables...
+2026-05-28 15:58:54.831 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.log.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.840 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.840 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.840 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.843 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.844 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.846 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.846 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.846 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.846 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.846 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.846 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.846 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.846 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.846 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.846 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.846 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.857 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.858 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.859 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.860 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.861 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.863 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.864 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.865 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.866 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.867 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.868 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.869 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.870 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.871 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.873 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.874 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.874 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.875 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.876 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.877 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.878 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.879 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.880 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.881 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.883 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.883 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.884 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.885 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.886 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.887 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.888 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.889 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.890 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.891 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.892 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}
+2026-05-28 15:58:54.893 Ignoring changed path C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v2\streamlit_bg.err.
+Watched_paths: {'C:\\Users\\rahul\\Projects\\Automobile Classifier\\automobile_classifier_v2\\app.py': WatchedPath(content_hash='59f36aaa7480285fcb10cec13f85522b', modification_time=1779962698.4269493, on_changed=<blinker.base.Signal object at 0x0000025F01006330>)}

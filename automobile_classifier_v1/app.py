@@ -7,7 +7,7 @@ from PIL import Image
 # -----------------------------
 # CONFIG
 # -----------------------------
-MODEL_PATH = "models/final_model.pth"
+MODEL_PATH = "models/final_model_v1.pth"
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # -----------------------------

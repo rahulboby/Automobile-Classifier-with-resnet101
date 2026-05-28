@@ -3,12 +3,14 @@ import torch
 import torch.nn as nn
 from torchvision import models, transforms
 from PIL import Image
+from inference import load_model, predict, transform_image
+from configs import DEVICE, MODEL_PATH
+import numpy as np
+from gradcam import generate_gradcam
 
 # -----------------------------
 # CONFIG
 # -----------------------------
-MODEL_PATH = "models/final_model_v0.pth"
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # -----------------------------
 # PAGE CONFIG
@@ -22,39 +24,14 @@ st.set_page_config(
 # -----------------------------
 # MODEL LOADING
 # -----------------------------
-@st.cache_resource
-def load_model():
-    checkpoint = torch.load(MODEL_PATH, map_location=DEVICE)
-
-    class_names = checkpoint["class_names"]
-    num_classes = checkpoint["num_classes"]
-    image_size = checkpoint["image_size"]
-    architecture = checkpoint["architecture"]
-
-    model = models.resnet50(weights=None)
-    model.fc = nn.Linear(model.fc.in_features, num_classes)
-
-    model.load_state_dict(checkpoint["model_state_dict"])
-
-    model.to(DEVICE)
-    model.eval()
-
-    return model, class_names, num_classes, image_size, architecture
-
-
-model, CLASS_NAMES, NUM_CLASSES, IMAGE_SIZE, ARCHITECTURE = load_model()
+model, CLASS_NAMES, NUM_CLASSES, IMAGE_SIZE, ARCHITECTURE = load_model(MODEL_PATH)
+# print("DEBUG: Model loaded successfully.")
 
 # -----------------------------
 # TRANSFORM
 # -----------------------------
-transform = transforms.Compose([
-    transforms.Resize((IMAGE_SIZE, IMAGE_SIZE)),
-    transforms.ToTensor(),
-    transforms.Normalize(
-        mean=[0.485, 0.456, 0.406],
-        std=[0.229, 0.224, 0.225]
-    )
-])
+transform = lambda image: transform_image(image, IMAGE_SIZE)
+# print("DEBUG: Transform function defined successfully.")
 
 # -----------------------------
 # SESSION STATE
@@ -86,6 +63,7 @@ if st.session_state.page == "main":
     )
 
     if uploaded_file is not None:
+
         image = Image.open(uploaded_file).convert("RGB")
 
         st.image(
@@ -94,25 +72,40 @@ if st.session_state.page == "main":
             use_container_width=True
         )
 
-        image_tensor = transform(image).unsqueeze(0).to(DEVICE)
+        predicted_class, confidence_score, image_tensor, predicted_index = predict(
+            image=image,
+            model=model,
+            transform=transform,
+            class_names=CLASS_NAMES
+        )
+        print("DEBUG: Prediction completed successfully.")
 
-        with torch.no_grad():
-            outputs = model(image_tensor)
-            probabilities = torch.softmax(outputs, dim=1)
+        original_image = np.array(image).astype(np.float32) / 255.0
 
-            confidence, prediction = torch.max(probabilities, dim=1)
-
-        predicted_class = CLASS_NAMES[prediction.item()]
-        confidence_score = confidence.item() * 100
+        with torch.enable_grad():
+            gradcam_image = generate_gradcam(
+                model=model,
+                image_tensor=image_tensor,
+                original_image=original_image,
+                target_class=predicted_index
+            )
 
         st.success(f"Prediction: {predicted_class.upper()}")
         st.info(f"Confidence: {confidence_score:.2f}%")
+
+        st.subheader("Grad-CAM Visualization")
+        st.image(
+            gradcam_image,
+            caption="Grad-CAM (Model Attention) Heatmap",
+            use_container_width=True
+        )
 
     st.divider()
 
     if st.button("View Model Details"):
         go_details()
         st.rerun()
+    # print("DEBUG: MODEL details rendered successfully.")
 
 # -----------------------------
 # DETAILS PAGE

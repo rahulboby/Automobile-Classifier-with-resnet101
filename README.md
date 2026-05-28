@@ -37,5 +37,9 @@ Final Run:
 - 20 epochs
 - Dataset was highly cleaned - 400 to 500 images per class
 
+# v2
+- Added Kia sonet
+- Added grad cam
+
 # Models:
 The models for each version are given in this drive link: [Automobile Classifier Models](https://drive.google.com/drive/folders/1Dzo2N9qPnRtoXx5FNe19c2tCIPrvAa0Y?usp=sharing)
