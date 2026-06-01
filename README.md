@@ -61,3 +61,17 @@ Train Loss: 0.0358 | Train Accuracy: 99.27%
 Val Loss:   0.0997 | Val Accuracy:   96.94%
 --------------------------------------------------
 ```
+
+# v4
+
+***No model was trained, this version uses the final_model_v3 from version 3***
+
+- Restructured repository and code
+- Added checkpoints while training to notebook.py
+- Made streamlit use full width instead of "centered"
+- Added Inference Timing in streamlit page
+- Added Prediction logs to track record each prediction made
+- Added top-k prediction - Instead of prediction, it gives 1 top prediction, and 2nd and 3rd predictions according to confidence
+- Model Statistics page added as a button to app.py
+
+

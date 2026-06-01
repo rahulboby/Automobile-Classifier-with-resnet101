@@ -1,0 +1,7 @@
+timestamp,image_filename,model_path,device,architecture,predicted_class,predicted_confidence,second_class,second_confidence,third_class,third_confidence,inference_time_sec
+2026-06-01 19:23:35,sonet (Rishi's).jpeg,models/final_model_v3.pth,cuda,ResNet50,kia_sonet,90.9258,kia_seltos,5.1313,kia_carnival,3.1879,0.2007
+2026-06-01 19:30:58,sonet (Rishi's).jpeg,models/final_model_v3.pth,cuda,ResNet50,kia_sonet,90.9258,kia_seltos,5.1313,kia_carnival,3.1879,0.2393
+2026-06-01 19:33:29,sonet (Rishi's).jpeg,models/final_model_v3.pth,cuda,ResNet50,kia_sonet,90.9258,kia_seltos,5.1313,kia_carnival,3.1879,0.1586
+2026-06-01 19:34:07,section_1.jpg,models/final_model_v3.pth,cuda,ResNet50,kia_seltos,99.8911,kia_ev6,0.0757,kia_carnival,0.0206,0.1299
+2026-06-01 19:34:20,carnival.jpg,models/final_model_v3.pth,cuda,ResNet50,kia_carnival,99.9647,kia_seltos,0.0249,kia_ev6,0.0084,0.1448
+2026-06-01 19:34:24,bmw r 1250 gs.jpg,models/final_model_v3.pth,cuda,ResNet50,kia_sonet,95.0973,kia_seltos,1.9279,kia_ev6,1.6078,0.3062
