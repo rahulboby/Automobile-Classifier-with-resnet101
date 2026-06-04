@@ -45,7 +45,7 @@ Final Run:
 The models for each version are given in this drive link: [Automobile Classifier Models](https://drive.google.com/drive/folders/1Dzo2N9qPnRtoXx5FNe19c2tCIPrvAa0Y?usp=sharing)
 
 # v3
-- Added Kia EV6
+- Added Kia EV6 data
 - Increaed dataset from ~400 images to ~900 iamges for each class 
 - total ~3600 images combined
 - Increased number of epochs from 25 to 40
@@ -73,5 +73,9 @@ Val Loss:   0.0997 | Val Accuracy:   96.94%
 - Added Prediction logs to track record each prediction made
 - Added top-k prediction - Instead of prediction, it gives 1 top prediction, and 2nd and 3rd predictions according to confidence
 - Model Statistics page added as a button to app.py
+
+# v5
+This version is specifically designed to test out different models and compare them with metrics.
+A README file is given in the folder automobile_classifier_v5 explaining the structure of the code. 
 
 

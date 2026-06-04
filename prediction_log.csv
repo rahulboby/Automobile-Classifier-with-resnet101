@@ -5,3 +5,4 @@ timestamp,image_filename,model_path,device,architecture,predicted_class,predicte
 2026-06-01 19:34:07,section_1.jpg,models/final_model_v3.pth,cuda,ResNet50,kia_seltos,99.8911,kia_ev6,0.0757,kia_carnival,0.0206,0.1299
 2026-06-01 19:34:20,carnival.jpg,models/final_model_v3.pth,cuda,ResNet50,kia_carnival,99.9647,kia_seltos,0.0249,kia_ev6,0.0084,0.1448
 2026-06-01 19:34:24,bmw r 1250 gs.jpg,models/final_model_v3.pth,cuda,ResNet50,kia_sonet,95.0973,kia_seltos,1.9279,kia_ev6,1.6078,0.3062
+2026-06-04 13:29:12,Screenshot (2).png,models/final_model_v3.pth,cuda,ResNet50,kia_carnival,43.7470,kia_seltos,24.4863,kia_ev6,16.9320,1.0616
