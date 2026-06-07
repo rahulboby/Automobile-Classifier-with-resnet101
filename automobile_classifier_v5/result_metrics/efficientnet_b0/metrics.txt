@@ -1,0 +1,18 @@
+Accuracy Score: 0.6181 (61.81%)
+Balanced Accuracy: 0.5971
+Macro Precision: 0.6884 | Macro Recall: 0.5971 | Macro F1: 0.5968
+Micro Precision: 0.6181 | Micro Recall: 0.6181 | Micro F1: 0.6181
+Weighted Precision: 0.6775 | Weighted Recall: 0.6181 | Weighted F1: 0.6019
+ROC AUC (macro ovr): 0.8539
+
+Classification Report:
+              precision    recall  f1-score   support
+
+kia_carnival       0.76      0.44      0.55        87
+     kia_ev6       0.74      0.72      0.73        88
+  kia_seltos       0.50      0.91      0.65       107
+   kia_sonet       0.75      0.33      0.46        82
+
+    accuracy                           0.62       364
+   macro avg       0.69      0.60      0.60       364
+weighted avg       0.68      0.62      0.60       364

@@ -1,0 +1,1 @@
+LOST - accidently retrained - around 95% for both train and val accuracy at 26th epoch

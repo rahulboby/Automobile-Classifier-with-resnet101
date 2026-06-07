@@ -1,0 +1,121 @@
+No checkpoints found, starting training from scratch.
+Epoch [1/30]
+Train Loss: 1.3681 | Train Accuracy: 30.87%
+Val Loss:   1.3630 | Val Accuracy:   34.72%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_2_best.pth
+Epoch [2/30]
+Train Loss: 1.3587 | Train Accuracy: 33.67%
+Val Loss:   1.3556 | Val Accuracy:   36.39%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_3_best.pth
+Epoch [3/30]
+Train Loss: 1.3498 | Train Accuracy: 36.71%
+Val Loss:   1.3490 | Val Accuracy:   36.94%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_4_best.pth
+Epoch [4/30]
+Train Loss: 1.3398 | Train Accuracy: 37.61%
+Val Loss:   1.3399 | Val Accuracy:   40.00%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_5.pth
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_5_best.pth
+Epoch [5/30]
+Train Loss: 1.3335 | Train Accuracy: 40.44%
+Val Loss:   1.3328 | Val Accuracy:   41.67%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_6_best.pth
+Epoch [6/30]
+Train Loss: 1.3240 | Train Accuracy: 40.06%
+Val Loss:   1.3268 | Val Accuracy:   43.61%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_7_best.pth
+Epoch [7/30]
+Train Loss: 1.3196 | Train Accuracy: 42.48%
+Val Loss:   1.3194 | Val Accuracy:   44.72%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_8_best.pth
+Epoch [8/30]
+Train Loss: 1.3120 | Train Accuracy: 42.97%
+Val Loss:   1.3143 | Val Accuracy:   49.17%
+--------------------------------------------------
+Epoch [9/30]
+Train Loss: 1.3080 | Train Accuracy: 44.14%
+Val Loss:   1.3054 | Val Accuracy:   48.06%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_10.pth
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_10_best.pth
+Epoch [10/30]
+Train Loss: 1.2958 | Train Accuracy: 46.32%
+Val Loss:   1.3000 | Val Accuracy:   50.28%
+--------------------------------------------------
+Epoch [11/30]
+Train Loss: 1.2909 | Train Accuracy: 47.32%
+Val Loss:   1.2946 | Val Accuracy:   48.33%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_12_best.pth
+Epoch [12/30]
+Train Loss: 1.2854 | Train Accuracy: 47.67%
+Val Loss:   1.2878 | Val Accuracy:   51.94%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_13_best.pth
+Epoch [13/30]
+Train Loss: 1.2750 | Train Accuracy: 50.57%
+Val Loss:   1.2817 | Val Accuracy:   52.50%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_14_best.pth
+Epoch [14/30]
+Train Loss: 1.2705 | Train Accuracy: 51.16%
+Val Loss:   1.2752 | Val Accuracy:   53.61%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_15.pth
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_15_best.pth
+Epoch [15/30]
+Train Loss: 1.2656 | Train Accuracy: 50.19%
+Val Loss:   1.2697 | Val Accuracy:   54.44%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_16_best.pth
+Epoch [16/30]
+Train Loss: 1.2605 | Train Accuracy: 50.78%
+Val Loss:   1.2631 | Val Accuracy:   56.94%
+--------------------------------------------------
+Epoch [17/30]
+Train Loss: 1.2505 | Train Accuracy: 53.30%
+Val Loss:   1.2565 | Val Accuracy:   55.83%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_18_best.pth
+Epoch [18/30]
+Train Loss: 1.2494 | Train Accuracy: 54.82%
+Val Loss:   1.2504 | Val Accuracy:   57.78%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_19_best.pth
+Epoch [19/30]
+Train Loss: 1.2416 | Train Accuracy: 53.09%
+Val Loss:   1.2448 | Val Accuracy:   58.33%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_20.pth
+Epoch [20/30]
+Train Loss: 1.2308 | Train Accuracy: 56.93%
+Val Loss:   1.2393 | Val Accuracy:   58.06%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_21_best.pth
+Epoch [21/30]
+Train Loss: 1.2302 | Train Accuracy: 55.93%
+Val Loss:   1.2333 | Val Accuracy:   59.72%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_22_best.pth
+Epoch [22/30]
+Train Loss: 1.2202 | Train Accuracy: 56.83%
+Val Loss:   1.2283 | Val Accuracy:   60.28%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_23_best.pth
+Epoch [23/30]
+Train Loss: 1.2129 | Train Accuracy: 57.55%
+Val Loss:   1.2219 | Val Accuracy:   61.11%
+--------------------------------------------------
+Epoch [24/30]
+Train Loss: 1.2115 | Train Accuracy: 57.10%
+Val Loss:   1.2165 | Val Accuracy:   60.56%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\models\checkpoints_efficientnet_b0\model_epoch_25.pth
+Validation accuracy dropped for 3 consecutive epochs. Stopping training.

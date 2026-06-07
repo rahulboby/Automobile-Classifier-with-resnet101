@@ -1,0 +1,34 @@
+No checkpoints found, starting training from scratch.
+c:\Users\rahul\AppData\Local\Programs\Python\Python312\Lib\site-packages\PIL\Image.py:1137: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\checkpoints_resnet18\model_epoch_1.pth
+Epoch [1/35]
+Train Loss: 1.4336 | Train Accuracy: 31.73%
+Val Loss:   1.3891 | Val Accuracy:   32.22%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\checkpoints_resnet18\model_epoch_2.pth
+Epoch [2/35]
+Train Loss: 1.3132 | Train Accuracy: 45.07%
+Val Loss:   1.2961 | Val Accuracy:   43.89%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\checkpoints_resnet18\model_epoch_3.pth
+Epoch [3/35]
+Train Loss: 1.2174 | Train Accuracy: 51.47%
+Val Loss:   1.2152 | Val Accuracy:   51.67%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\checkpoints_resnet18\model_epoch_4.pth
+Epoch [4/35]
+Train Loss: 1.1290 | Train Accuracy: 57.14%
+Val Loss:   1.1286 | Val Accuracy:   56.94%
+--------------------------------------------------
+Model saved to C:\Users\rahul\Projects\Automobile Classifier\automobile_classifier_v5\checkpoints_resnet18\model_epoch_5.pth
+Epoch [5/35]
+Train Loss: 1.0466 | Train Accuracy: 60.04%
+Val Loss:   1.0497 | Val Accuracy:   60.28%
+--------------------------------------------------
+...
+Epoch [35/35]
+Train Loss: 0.2111 | Train Accuracy: 96.06%
+Val Loss:   0.2372 | Val Accuracy:   95.00%
+--------------------------------------------------
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
