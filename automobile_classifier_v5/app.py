@@ -1,5 +1,6 @@
 import csv
 from pathlib import Path
+import time
 
 import streamlit as st
 import torch
@@ -7,9 +8,10 @@ import torch.nn as nn
 from torchvision import models, transforms
 from PIL import Image
 from utils.inference import load_model, predict, transform_image
-from utils.configs import DEVICE, MODEL_PATH
+import utils.configs
+from utils.configs import DEVICE
 import numpy as np
-from utils.gradcam import generate_gradcam
+import pandas as pd
 from datetime import datetime
 
 # -----------------------------
@@ -20,21 +22,44 @@ from datetime import datetime
 # PAGE CONFIG
 # -----------------------------
 st.set_page_config(
-    page_title="KIA Model Classifier",
+    page_title="KIA Model Classifier (Testing)",
     layout="wide"
 )
 
 # -----------------------------
-# MODEL LOADING
+# LOAD ALL MODELS IN models/ FOR TESTING
 # -----------------------------
-model, CLASS_NAMES, NUM_CLASSES, IMAGE_SIZE, ARCHITECTURE = load_model(MODEL_PATH)
-# print("DEBUG: Model loaded successfully.")
+MODEL_DIR = Path(utils.configs.MODEL_DIR)
 
-# -----------------------------
-# TRANSFORM
-# -----------------------------
-transform = lambda image: transform_image(image, IMAGE_SIZE)
-# print("DEBUG: Transform function defined successfully.")
+def load_all_models(models_dir=MODEL_DIR):
+    models_info = []
+    if not models_dir.exists():
+        return models_info
+
+    pths = sorted(models_dir.glob("*.pth"))
+    for p in pths:
+        try:
+            m, class_names, num_classes, image_size, architecture = load_model(str(p))
+            models_info.append(
+                {
+                    "path": str(p),
+                    "filename": p.name,
+                    "model": m,
+                    "class_names": class_names,
+                    "num_classes": num_classes,
+                    "image_size": image_size,
+                    "architecture": architecture,
+                }
+            )
+        except Exception as e:
+            # non-fatal: skip corrupted or incompatible checkpoints
+            print(f"Skipping model {p}: {e}")
+
+    return models_info
+
+
+ALL_MODELS = load_all_models()
+
 
 # -----------------------------
 # SESSION STATE
@@ -101,86 +126,150 @@ def append_prediction_log(uploaded_filename, model_path, device, architecture, t
 
     return log_file
 
+
+def get_model_selection():
+    model_names = [m["filename"] for m in ALL_MODELS]
+    if not model_names:
+        return []
+    selected = st.multiselect(
+        "Select models to evaluate",
+        options=model_names,
+        default=model_names,
+        help="Choose which model checkpoint files to include in batch evaluation.",
+    )
+    return [m for m in ALL_MODELS if m["filename"] in selected]
+
+
+def build_summary_dataframe(results_df):
+    if results_df.empty:
+        return results_df
+
+    summary = results_df.groupby(["model_file", "architecture"]).agg(
+        images_tested=("image_filename", "nunique"),
+        image_predictions=("image_filename", "count"),
+        avg_top1_conf=("top1_conf", "mean"),
+        avg_top2_conf=("top2_conf", "mean"),
+        avg_top3_conf=("top3_conf", "mean"),
+        most_common_top1=("top1", lambda x: x.mode().iloc[0] if not x.mode().empty else ""),
+        top1_mode_count=("top1", lambda x: x.value_counts().iloc[0] if not x.empty else 0),
+    ).reset_index()
+
+    summary["avg_top1_conf"] = summary["avg_top1_conf"].round(4)
+    summary["avg_top2_conf"] = summary["avg_top2_conf"].round(4)
+    summary["avg_top3_conf"] = summary["avg_top3_conf"].round(4)
+    summary["top1_mode_pct"] = (summary["top1_mode_count"] / summary["images_tested"]).round(4)
+    summary = summary.sort_values(by=["avg_top1_conf", "top1_mode_pct"], ascending=False)
+    return summary
+
+
 # -----------------------------
 # MAIN PAGE
 # -----------------------------
 if st.session_state.page == "main":
 
     st.title("KIA Model Classifier")
-    st.write("Upload an image for classification.")
+    st.write("Upload one or more images for classification. The app will run them through every selected model.")
 
-    uploaded_file = st.file_uploader(
-        "Upload Image",
-        type=["jpg", "jpeg", "png"]
+    selected_models = get_model_selection()
+
+    uploaded_files = st.file_uploader(
+        "Upload image(s)",
+        type=["jpg", "jpeg", "png"],
+        accept_multiple_files=True,
     )
 
-    if uploaded_file is not None:
-        
-        start_time = datetime.now()
+    if uploaded_files:
+        if not ALL_MODELS:
+            st.error("No model checkpoints found in the models/ directory.")
+        elif not selected_models:
+            st.warning("Select at least one model to evaluate.")
+        else:
+            batch_results = []
+            total_start = time.perf_counter()
 
-        image = Image.open(uploaded_file).convert("RGB")
+            for uploaded_file in uploaded_files:
+                image_name = getattr(uploaded_file, "name", "uploaded_image")
+                try:
+                    image = Image.open(uploaded_file).convert("RGB")
+                except Exception as e:
+                    st.warning(f"Unable to open {image_name}: {e}")
+                    continue
 
-        image_tensor, top_predictions = predict(
-            image=image,
-            model=model,
-            transform=transform,
-            class_names=CLASS_NAMES,
-            top_k=3
-        )
+                for minfo in selected_models:
+                    model_path = minfo["path"]
+                    filename = minfo["filename"]
+                    model_obj = minfo["model"]
+                    class_names = minfo["class_names"]
+                    image_size = minfo["image_size"]
+                    architecture = minfo.get("architecture", "")
 
-        predicted_class = top_predictions[0]["class_name"]
-        confidence_score = top_predictions[0]["confidence"]
-        predicted_index = top_predictions[0]["index"]
+                    transform = lambda img, s=image_size: transform_image(img, s)
 
-        original_image = np.array(image).astype(np.float32) / 255.0
+                    model_start = time.perf_counter()
+                    try:
+                        _, top_predictions = predict(
+                            image=image,
+                            model=model_obj,
+                            transform=transform,
+                            class_names=class_names,
+                            top_k=3,
+                        )
+                    except Exception as e:
+                        st.warning(f"Prediction failed for {filename} on {image_name}: {e}")
+                        continue
+                    inference_time = time.perf_counter() - model_start
 
-        # with torch.enable_grad():
-        #     gradcam_image = generate_gradcam(
-        #         model=model,
-        #         image_tensor=image_tensor,
-        #         original_image=original_image,
-        #         target_class=predicted_index
-        #     )
-        
+                    row = {
+                        "image_filename": image_name,
+                        "model_file": filename,
+                        "architecture": architecture,
+                        "top1": top_predictions[0]["class_name"] if len(top_predictions) > 0 else "",
+                        "top1_conf": float(top_predictions[0]["confidence"]) if len(top_predictions) > 0 else 0.0,
+                        "top2": top_predictions[1]["class_name"] if len(top_predictions) > 1 else "",
+                        "top2_conf": float(top_predictions[1]["confidence"]) if len(top_predictions) > 1 else 0.0,
+                        "top3": top_predictions[2]["class_name"] if len(top_predictions) > 2 else "",
+                        "top3_conf": float(top_predictions[2]["confidence"]) if len(top_predictions) > 2 else 0.0,
+                        "inference_time_sec": float(f"{inference_time:.4f}"),
+                    }
 
-        st.success(f"Top Prediction: {predicted_class.upper()}")
-        st.write(f"Confidence: {confidence_score:.2f}%")
+                    batch_results.append(row)
 
-        with st.expander("View 2nd and 3rd Predictions", expanded=False):
-            for rank, prediction in enumerate(top_predictions[1:], start=2):
-                class_name = prediction["class_name"]
-                confidence = prediction["confidence"]
-                st.write(f"{rank}. {class_name} — {confidence:.2f}%")
+                    append_prediction_log(
+                        uploaded_filename=image_name,
+                        model_path=model_path,
+                        device=DEVICE,
+                        architecture=architecture,
+                        top_predictions=top_predictions,
+                        inference_time_sec=inference_time,
+                    )
 
-        end_time = datetime.now()
-        inference_time_min = (end_time - start_time).total_seconds()
-        inference_time_min = max(inference_time_min, 0.001)  # Ensure minimum time for display
-        st.success(f"Inference Time: {inference_time_min:.2f} seconds")
+            total_time = time.perf_counter() - total_start
 
-        append_prediction_log(
-            uploaded_filename=getattr(uploaded_file, "name", "uploaded_image"),
-            model_path=MODEL_PATH,
-            device=DEVICE,
-            architecture=ARCHITECTURE,
-            top_predictions=top_predictions,
-            inference_time_sec=inference_time_min
-        )
+            if batch_results:
+                df = pd.DataFrame(batch_results)
+                st.subheader("Model predictions")
+                st.dataframe(df)
 
-        st.progress(int(confidence_score), text=f"Confidence: {confidence_score:.2f}%")
+                summary_df = build_summary_dataframe(df)
+                st.subheader("Batch model ranking")
+                st.dataframe(summary_df)
 
-        st.subheader("Grad-CAM Visualization")
-        # st.image(
-        #     gradcam_image,
-        #     caption="Grad-CAM (Model Attention) Heatmap",
-        #     width=500
-        # )
+                best_model = summary_df.iloc[0]
+                st.markdown(
+                    f"**Best model by average Top-1 confidence:** {best_model['model_file']} ({best_model['architecture']}) — {best_model['avg_top1_conf']:.4f}%"
+                )
+                st.markdown(
+                    f"Most consistent Top-1 label for this model: {best_model['most_common_top1']} ({best_model['top1_mode_count']} / {best_model['images_tested']} images)"
+                )
+                st.text(f"Total inference time across all models and images: {total_time:.3f} sec")
+            else:
+                st.write("No successful predictions to display.")
 
-        with st.expander("Show Uploaded Image", expanded=False):
-            st.image(
-                image,
-                caption="Uploaded Image",
-                width=500
-            )
+            if len(uploaded_files) == 1:
+                with st.expander("Show Uploaded Image", expanded=False):
+                    st.image(image, caption=image_name, width=500)
+            else:
+                st.write(f"Processed {len(uploaded_files)} uploaded images.")
 
 
     st.divider()
@@ -193,7 +282,6 @@ if st.session_state.page == "main":
     with st.expander("View Prediction Log", expanded=False):
         log_file = get_prediction_log_path()
         if log_file.exists():
-            import pandas as pd
             df = pd.read_csv(log_file)
             st.dataframe(df)
         else:
@@ -204,40 +292,18 @@ if st.session_state.page == "main":
 # -----------------------------
 elif st.session_state.page == "details":
 
-    st.title("Model Details")
+    st.title("Loaded Models")
 
-    st.subheader("Architecture")
-    st.write(ARCHITECTURE)
+    st.write(f"Models discovered in: {MODEL_DIR}")
+    st.write(f"Number of model checkpoints loaded: {len(ALL_MODELS)}")
 
-    st.subheader("Classifier Head")
-    st.code(f"Linear(2048 → {NUM_CLASSES})")
-
-    st.subheader("Detected Classes ({NUM_CLASSES})")
-    st.write(CLASS_NAMES)
-
-    st.subheader("Input Specifications")
-    st.write(f"Image Size: {IMAGE_SIZE} × {IMAGE_SIZE}")
-    st.write("Input Type: RGB Image")
-
-    # st.subheader("Preprocessing")
-    # st.code("""
-    #     Resize()
-    #     ToTensor()
-    #     Normalize(
-    #         mean=[0.485, 0.456, 0.406],
-    #         std=[0.229, 0.224, 0.225]
-    #     )
-    # """)
-
-    st.subheader("Training Setup")
-    st.write("Transfer Learning")
-    st.write("Pretrained ImageNet ResNet50 Backbone - Unfrozen Layer 4 and Classifier Head")
-    st.write("Custom Final Classification Layer")
-    st.write("Loss Function: CrossEntropyLoss")
-    st.write("Optimizer: Adam")
-
-    st.subheader("Model File")
-    st.code(MODEL_PATH)
+    for minfo in ALL_MODELS:
+        st.subheader(minfo.get("filename", "unknown"))
+        st.write(f"Architecture: {minfo.get('architecture', '')}")
+        st.write(f"Classes: {len(minfo.get('class_names', []))}")
+        st.write(f"Image size expected: {minfo.get('image_size', '')}")
+        if st.button(f"Show classes for {minfo.get('filename')}", key=minfo.get('filename')):
+            st.write(minfo.get('class_names', []))
 
     st.subheader("Inference Device")
     st.write(str(DEVICE).upper())
