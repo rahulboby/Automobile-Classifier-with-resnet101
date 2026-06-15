@@ -39,7 +39,7 @@ TRAIN_SPLIT = 0.80
 VAL_SPLIT = 0.10
 TEST_SPLIT = 0.10
 
-MODEL_NAME = "densenet121"  # Possible values: resnet50, resnet18, resnet101, efficientnet_b0, densenet121, mobilenet_v2
+MODEL_NAME = "resnet101"  # Possible values: resnet50, resnet18, resnet101, efficientnet_b0, densenet121, mobilenet_v2
 MODEL_PATH = get_model_path(MODEL_NAME)
 
 # Device

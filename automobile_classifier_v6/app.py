@@ -134,13 +134,13 @@ if st.session_state.page == "main":
 
         original_image = np.array(image).astype(np.float32) / 255.0
 
-        # with torch.enable_grad():
-        #     gradcam_image = generate_gradcam(
-        #         model=model,
-        #         image_tensor=image_tensor,
-        #         original_image=original_image,
-        #         target_class=predicted_index
-        #     )
+        with torch.enable_grad():
+            gradcam_image = generate_gradcam(
+                model=model,
+                image_tensor=image_tensor,
+                original_image=original_image,
+                target_class=predicted_index
+            )
         
 
         st.success(f"Top Prediction: {predicted_class.upper()}")
@@ -172,11 +172,11 @@ if st.session_state.page == "main":
         with col1:
             with st.expander("Grad-CAM Visualization", expanded=False):
                 st.write("Grad-CAM visualization is currently unavailable.")
-                # st.image(
-                #     gradcam_image,
-                #     caption="Grad-CAM (Model Attention) Heatmap",
-                #     width=500
-                # )
+                st.image(
+                    gradcam_image,
+                    caption="Grad-CAM (Model Attention) Heatmap",
+                    width=500
+                )
         with col2:
             with st.expander("Show Uploaded Image", expanded=False):
                 st.image(
