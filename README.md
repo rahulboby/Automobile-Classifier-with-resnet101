@@ -78,4 +78,6 @@ Val Loss:   0.0997 | Val Accuracy:   96.94%
 This version is specifically designed to test out different models and compare them with metrics.
 A README file is given in the folder automobile_classifier_v5 explaining the structure of the code. 
 
+# v6 
+The final version using resnet101, chosen from the results from ```v5```. resnet101 showed the most accuracy, precision and confidence with various tests. 
 
